@@ -52,38 +52,30 @@ Covid19-Data-Analysis/
 ├── data/                   # nơi lưu trữ dữ liệu thô và/hoặc đã xử lý  
 │   ├── raw/                # dữ liệu gốc, chưa xử lý  
 │   ├── processed/          # dữ liệu đã clean / transform / thống kê …  
-│   ├── external/           # (tùy chọn) dữ liệu từ nguồn bên ngoài (có thể archive)  
+│   ├── model/              # (tùy chọn) dữ liệu từ nguồn bên ngoài (có thể archive)  
 │   └── README.md           # mô tả các file dữ liệu: nguồn, ý nghĩa, format, date cập nhật  
 │
 ├── notebooks/              # notebooks dùng để phân tích, thử nghiệm, khám phá dữ liệu  
 │   ├── 01_data_cleaning.ipynb  
-│   ├── 02_exploratory_analysis.ipynb  
-│   ├── 03_visualization.ipynb  
-│   └── ...                 # các notebook khác tuỳ theo nhu cầu  
+│   ├── 02_preprocessing.ipynb  
+│   ├── 03_clustering.ipynb 
+│   └── 04_visualization.ipynb             
 │
 ├── src/                    # mã nguồn chính — logic xử lý, phân tích, model, helper …  
-│   ├── data_processing.py  # mã để load / clean / transform data  
-│   ├── analysis.py         # các hàm phân tích: thống kê, tính toán, mô hình …  
+│   ├── clustering.py      
+│   ├── features.py          
 │   ├── visualization.py    # mã hỗ trợ vẽ biểu đồ, bản đồ ...  
-│   └── utils.py            # các hàm util chung (đọc file, helper, config …)  
+│   └── preprocessing.py            
 │
 ├── output/                 # kết quả sinh ra: hình ảnh, báo cáo, bản đồ, CSV/Excel xuất ra …  
-│   ├── figures/            # biểu đồ, hình ảnh  
-│   ├── reports/            # báo cáo (markdown, html, pdf …)  
-│   └── data_exports/        # nếu xuất dữ liệu (csv, json …) sau xử lý  
+│   ├── chart/              # biểu đồ, hình ảnh   
+│   └── model_results/      # nếu xuất dữ liệu (csv, json …) sau xử lý  
 │
-├── app/                    # nếu muốn có giao diện web / dashboard  
-│   ├── streamlit_app/      # (theo repo hiện tại có thư mục streamlit_app)  
-│   │     └── app.py        # main file chạy ứng dụng  
-│   └── (các module frontend/backend khác nếu cần)  
+├── streamlit_app/      # (theo repo hiện tại có thư mục streamlit_app)
 │
-├── docs/                   # tài liệu, hướng dẫn, mô tả dự án  
-│   ├── project_description.md  
-│   ├── data_dictionary.md  # mô tả schema / meaning của các cột dữ liệu  
-│   ├── how_to_run.md       # hướng dẫn cài đặt & chạy  
-│   └── contribution.md     # hướng dẫn đóng góp nếu mở source chung  
 │
-├── .gitignore              # ignore file/folder không cần track (data lớn, output tạm …)  
+├── .gitignore              # ignore file/folder không cần track (data lớn, output tạm …) 
+├── README.md
 ├── requirements.txt        # thư viện / dependencies của dự án
 
 ```
