@@ -61,17 +61,17 @@ Covid19-Data-Analysis/
 │   ├── 03_clustering.ipynb 
 │   └── 04_visualization.ipynb             
 │
+├── output/                 # kết quả sinh ra: hình ảnh, báo cáo, bản đồ, CSV/Excel xuất ra …  
+│   ├── chart/              # biểu đồ, hình ảnh   
+│   └── model_results/      # nếu xuất dữ liệu (csv, json …) sau xử lý  
+│
 ├── src/                    # mã nguồn chính — logic xử lý, phân tích, model, helper …  
 │   ├── clustering.py      
 │   ├── features.py          
 │   ├── visualization.py    # mã hỗ trợ vẽ biểu đồ, bản đồ ...  
 │   └── preprocessing.py            
 │
-├── output/                 # kết quả sinh ra: hình ảnh, báo cáo, bản đồ, CSV/Excel xuất ra …  
-│   ├── chart/              # biểu đồ, hình ảnh   
-│   └── model_results/      # nếu xuất dữ liệu (csv, json …) sau xử lý  
-│
-├── streamlit_app/      # (theo repo hiện tại có thư mục streamlit_app)
+├── streamlit_app/          # (theo repo hiện tại có thư mục streamlit_app)
 │
 │
 ├── .gitignore              # ignore file/folder không cần track (data lớn, output tạm …) 
