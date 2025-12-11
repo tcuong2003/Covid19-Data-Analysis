@@ -22,27 +22,26 @@ Chủ đề COVID-19 không chỉ mang giá trị học thuật mà còn có ý 
 ---
 
 ## ✨ Câu hỏi nghiên cứu (Research Questions)
-Understanding Data – COVID-19 Time Series
-Mục lục
-1.Định nghĩa vấn đề
-1.1 Bối cảnh dữ liệu
 
-Bộ dữ liệu COVID-19 mà Johns Hopkins University cung cấp là một hệ thống ghi nhận số ca bệnh theo chuỗi thời gian (time series), được tổng hợp từ các cơ quan y tế quốc gia trên toàn thế giới. Đây là một trong những nguồn dữ liệu được sử dụng rộng rãi nhất trong suốt thời kỳ đại dịch, hỗ trợ báo chí, cơ quan quản lý, các tổ chức nghiên cứu và cộng đồng theo dõi tình hình dịch bệnh theo từng ngày.
+Bộ dữ liệu COVID-19 do **Johns Hopkins University (JHU)** cung cấp là một tập dữ liệu chuỗi thời gian (time series) mang tính toàn cầu, ghi nhận liên tục số ca **nhiễm**, **tử vong** và **hồi phục** theo từng ngày. Đây là nguồn dữ liệu quan trọng giúp mô tả diễn biến của đại dịch và hỗ trợ quá trình phân tích định lượng.
 
-Dữ liệu bao gồm 3 nhóm chính:
+Dựa trên bộ dữ liệu này, dự án tập trung trả lời các câu hỏi nghiên cứu chính sau:
 
-Confirmed – Tổng số ca nhiễm được xác nhận
-Deaths – Tổng số ca tử vong
-Recovered – Tổng số ca hồi phục
-Mỗi bảng đều được lưu theo dạng "wide format": mỗi dòng là một quốc gia/vùng lãnh thổ, và mỗi cột tương ứng với một ngày ghi nhận kể từ tháng 1/2020.
+### 🔍 1. Diễn biến dịch bệnh theo thời gian
+- Số ca nhiễm/tử vong/hồi phục thay đổi như thế nào từ giai đoạn đầu dịch đến cuối năm?
+- Những mốc thời gian nào ghi nhận sự bùng phát hoặc suy giảm mạnh?
 
-Dữ liệu giúp mô tả:
+### 🌍 2. So sánh mức độ ảnh hưởng giữa các khu vực/quốc gia
+- Quốc gia nào chịu ảnh hưởng nặng nề nhất trong từng giai đoạn?
+- Tốc độ lây lan khác nhau như thế nào giữa các khu vực địa lý?
 
-Diễn biến dịch bệnh qua thời gian
-Sự khác nhau về tốc độ lây lan giữa các khu vực
-Các giai đoạn bùng phát, đạt đỉnh và suy giảm
-Tác động của chính sách phòng chống dịch
-Tỉ lệ tử vong và khả năng phục hồi theo từng quốc gia
+### 📈 3. Xác định xu hướng và mô hình lan truyền
+- Liệu có thể nhận diện các giai đoạn: bùng phát – đạt đỉnh – suy giảm?
+- Các đường cong tăng trưởng có điểm tương đồng hoặc khác biệt nổi bật nào?
+
+### ⚖️ 4. Đánh giá tỉ lệ tử vong và khả năng hồi phục
+- Tỉ lệ tử vong (CFR) của từng quốc gia là bao nhiêu?
+- Quốc gia nào có mức độ phục hồi tốt hơn và vì sao?
 
 
 ---
@@ -55,14 +54,36 @@ Tỉ lệ tử vong và khả năng phục hồi theo từng quốc gia
 
 ---
 
-## 📦 Cài đặt
-
-
----
-
 ## 🚀 Cách chạy ứng dụng
+Ứng dụng trực quan hóa dữ liệu được xây dựng bằng **Streamlit**. Để khởi chạy, làm theo các bước sau:
 
+### 1️⃣ Mở terminal hoặc command prompt
+Dẫn đường dẫn đến thư mục chứa ứng dụng Streamlit:
+```
+cd streamlit_app
+```
 
+### 2️⃣ Cài đặt thư viện cần thiết
+Chạy lệnh:
+```
+pip install -r requirements.txt
+```
+*Hoặc thủ công:* 
+```
+pip install streamlit pandas plotly
+```
+
+### 3️⃣ Khởi chạy ứng dụng
+Dùng câu lệnh:
+```
+streamlit run covid_dashboard.py
+```
+
+### 4️⃣ Mở trong trình duyệt
+Streamlit sẽ tự mở trình duyệt hoặc bạn có thể truy cập:
+```
+http://localhost:8501
+```
 
 ---
 ## 🗂️ Cấu trúc dự án
@@ -76,12 +97,14 @@ Covid19-Data-Analysis/
 │   └── README.md           # mô tả các file dữ liệu: nguồn, ý nghĩa, format, date cập nhật  
 │
 ├── notebooks/              # notebooks dùng để phân tích, thử nghiệm, khám phá dữ liệu  
-│   ├── 01_data_cleaning.ipynb  
+│   ├── 01_data_understanding.ipynb  
 │   ├── 02_preprocessing.ipynb  
-│   ├── 03_clustering.ipynb 
-│   └── 04_visualization.ipynb             
+│   ├── 03_EDA.ipynb 
+│   ├── 03a_featuring.ipynb 
+│   ├── 04_clustering.ipynb 
+│   └── 05_visualization.ipynb             
 │
-├── output/                 # kết quả sinh ra: hình ảnh, báo cáo, bản đồ, CSV/Excel xuất ra …  
+├── output/                 # kết quả sinh ra: hình ảnh, báo cáo, bản đồ, CSV Excel xuất ra …  
 │   ├── chart/              # biểu đồ, hình ảnh   
 │   └── model_results/      # nếu xuất dữ liệu (csv, json …) sau xử lý  
 │
@@ -91,7 +114,7 @@ Covid19-Data-Analysis/
 │   ├── visualization.py    # mã hỗ trợ vẽ biểu đồ, bản đồ ...  
 │   └── preprocessing.py            
 │
-├── streamlit_app/          # (theo repo hiện tại có thư mục streamlit_app)
+├── streamlit_app/          # thư mục chứa chương trình chạy streamlit
 │
 │
 ├── .gitignore              # ignore file/folder không cần track (data lớn, output tạm …) 
@@ -109,18 +132,15 @@ Covid19-Data-Analysis/
 
 ## 📚 Tài liệu tham khảo
 
-- [COVID-19 Data](https://github.com/CSSEGISandData/COVID-19)
-- 
-- 
-- 
+- [COVID-19 Data](https://github.com/CSSEGISandData/COVID-19) 
 
 ---
 
 ## ⚠️ Ghi chú
 
-- 
-- 
-- 
+- Đồ án chỉ là sản phẩm tập thể không có giá trị thương mại
+- Tổng hợp dữ liệu trên tập dữ liệu thô có sẵn, sẽ có thiếu sót so với một số tập dữ liệu khác
+- Có thể cải thiện chất lượng và phát triển hơn trong tương lai
 
 ---
 
