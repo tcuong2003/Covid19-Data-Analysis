@@ -22,7 +22,27 @@ Chủ đề COVID-19 không chỉ mang giá trị học thuật mà còn có ý 
 ---
 
 ## ✨ Câu hỏi nghiên cứu (Research Questions)
+Understanding Data – COVID-19 Time Series
+Mục lục
+1.Định nghĩa vấn đề
+1.1 Bối cảnh dữ liệu
 
+Bộ dữ liệu COVID-19 mà Johns Hopkins University cung cấp là một hệ thống ghi nhận số ca bệnh theo chuỗi thời gian (time series), được tổng hợp từ các cơ quan y tế quốc gia trên toàn thế giới. Đây là một trong những nguồn dữ liệu được sử dụng rộng rãi nhất trong suốt thời kỳ đại dịch, hỗ trợ báo chí, cơ quan quản lý, các tổ chức nghiên cứu và cộng đồng theo dõi tình hình dịch bệnh theo từng ngày.
+
+Dữ liệu bao gồm 3 nhóm chính:
+
+Confirmed – Tổng số ca nhiễm được xác nhận
+Deaths – Tổng số ca tử vong
+Recovered – Tổng số ca hồi phục
+Mỗi bảng đều được lưu theo dạng "wide format": mỗi dòng là một quốc gia/vùng lãnh thổ, và mỗi cột tương ứng với một ngày ghi nhận kể từ tháng 1/2020.
+
+Dữ liệu giúp mô tả:
+
+Diễn biến dịch bệnh qua thời gian
+Sự khác nhau về tốc độ lây lan giữa các khu vực
+Các giai đoạn bùng phát, đạt đỉnh và suy giảm
+Tác động của chính sách phòng chống dịch
+Tỉ lệ tử vong và khả năng phục hồi theo từng quốc gia
 
 
 ---
