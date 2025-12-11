@@ -191,4 +191,4 @@ st.markdown("""
 - 🏥 Con số là số ca mắc được xác nhận
 """)
 
-st.caption("Tạo bằng Streamlit + Plotly | Dashboard COVID-19 Global Analysis")
+
